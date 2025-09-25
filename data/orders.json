@@ -1,60 +1,70 @@
 {
+  "store": {
+    "name": "AnyMart",
+    "currency": "USD",
+    "dateGenerated": "2025-09-25T10:00:00Z"
+  },
   "orders": [
     {
       "id": "A-1001",
+      "createdAt": "2025-09-24T12:01:05Z",
       "status": "PAID",
-      "customer": { "email": "alice@example.com" },
+      "customer": { "id": 501, "email": "alice@example.com", "loyaltyTier": "GOLD" },
       "lines": [
-        { "sku": "PEN-RED", "qty": 2, "price": 10.0 },
-        { "sku": "NOTEBOOK-A5", "qty": 1, "price": 50.0 }
+        { "sku": "PEN-RED", "qty": 2, "price": 10.0, "category": "stationery" },
+        { "sku": "NB-A5", "qty": 1, "price": 50.0, "category": "stationery" }
       ],
-      "payment": { "captured": true },
-      "refund": {},
-      "shipping": { "fee": 5.0 }
+      "discounts": [{ "code": "BACK2SCHOOL", "amount": 5.0 }],
+      "shipping": { "method": "STANDARD", "fee": 4.99 },
+      "payment": { "method": "CARD", "captured": true }
     },
     {
       "id": "A-1002",
-      "status": "CANCELLED",
-      "customer": {},
+      "createdAt": "2025-09-24T13:10:00Z",
+      "status": "PENDING",
+      "customer": { "id": 502 },
       "lines": [],
-      "payment": { "captured": false },
-      "refund": {},
-      "shipping": { "fee": 0.0 }
+      "discounts": [],
+      "shipping": { "method": "STANDARD", "fee": 4.99 },
+      "payment": { "method": "CARD", "captured": false }
     },
     {
       "id": "A-1003",
+      "createdAt": "2025-09-24T14:30:10Z",
       "status": "PAID",
-      "customer": { "email": "not-an-email" },
+      "customer": { "id": 503, "email": "bob[at]example.com" },
       "lines": [
-        { "sku": "USB-32GB", "qty": 0, "price": 12.5 },
-        { "sku": "FLASH-DRIVE", "qty": 1, "price": -15.0 }
+        { "sku": "USB-32GB", "qty": 0, "price": 12.5, "category": "electronics" },
+        { "sku": "MOUSE-WL", "qty": 1, "price": -15.0, "category": "electronics" }
       ],
-      "payment": { "captured": true },
-      "refund": {},
-      "shipping": { "fee": 2.0 }
+      "discounts": [{ "code": "WELCOME", "amount": 3.0 }],
+      "shipping": { "method": "EXPRESS", "fee": 9.99 },
+      "payment": { "method": "CARD", "captured": true }
     },
     {
       "id": "A-1004",
+      "createdAt": "2025-09-23T08:05:00Z",
       "status": "CANCELLED",
-      "customer": { "email": "bob@example.org" },
+      "customer": { "id": 504, "email": "carol@example.com" },
       "lines": [
-        { "sku": "NOTE-POCKET", "qty": 2, "price": 8.0 }
+        { "sku": "HDMI-2M", "qty": 2, "price": 8.0, "category": "electronics" }
       ],
-      "payment": { "captured": false },
-      "refund": { "amount": 16.0 },
-      "shipping": { "fee": 0.0 }
+      "refund": { "amount": 16.0, "issuedAt": "2025-09-24T09:00:00Z" },
+      "shipping": { "method": "STANDARD", "fee": 0.0 },
+      "payment": { "method": "CARD", "captured": false }
     },
     {
       "id": "A-1005",
+      "createdAt": "2025-09-25T09:55:00Z",
       "status": "PAID",
-      "customer": { "email": "carol@company.com" },
+      "customer": { "id": 505, "email": "dora@example.com" },
       "lines": [
-        { "sku": "PEN-RED", "qty": 3, "price": 10.0 },
-        { "sku": "USB-32GB", "qty": 2, "price": 12.5 }
+        { "sku": "PEN-RED", "qty": 3, "price": 10.0, "category": "stationery" },
+        { "sku": "USB-32GB", "qty": 2, "price": 12.5, "category": "electronics" }
       ],
-      "payment": { "captured": true },
-      "refund": {},
-      "shipping": { "fee": 4.0 }
+      "discounts": [],
+      "shipping": { "method": "STANDARD", "fee": 4.99 },
+      "payment": { "method": "UPI", "captured": true }
     }
   ]
 }

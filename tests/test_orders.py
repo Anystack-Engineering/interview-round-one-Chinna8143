@@ -55,8 +55,8 @@ def test_lines_integrity(data):
                 bad_orders.add(oid)
             if ln.get("price", 0) < 0:
                 bad_orders.add(oid)
-    # Only A-1003 has non-positive qty and negative price in this dataset
-    assert bad_orders == {"A-1003"}, f"Lines integrity failed for {sorted(bad_orders)}"
+    # Now A-1002 and A-1003 have line integrity issues in this dataset
+    assert bad_orders == {"A-1002", "A-1003"}, f"Lines integrity failed for {sorted(bad_orders)}"
 
 def test_payment_refund_consistency(data):
     paid_not_captured = []
@@ -103,7 +103,7 @@ def test_top2_skus_by_quantity(data):
         if qty > 0:
             counter[ln["sku"]] += qty
     top2 = counter.most_common(2)
-    assert top2 == [("PEN-RED", 5), ("NOTE-POCKET", 2)]
+    assert top2 == [("PEN-RED", 5), ("HDMI-2M", 2)]
 
 def test_gmv_per_order(data):
     gmv = {}
