@@ -1,0 +1,60 @@
+{
+  "orders": [
+    {
+      "id": "A-1001",
+      "status": "PAID",
+      "customer": { "email": "alice@example.com" },
+      "lines": [
+        { "sku": "PEN-RED", "qty": 2, "price": 10.0 },
+        { "sku": "NOTEBOOK-A5", "qty": 1, "price": 50.0 }
+      ],
+      "payment": { "captured": true },
+      "refund": {},
+      "shipping": { "fee": 5.0 }
+    },
+    {
+      "id": "A-1002",
+      "status": "CANCELLED",
+      "customer": {},
+      "lines": [],
+      "payment": { "captured": false },
+      "refund": {},
+      "shipping": { "fee": 0.0 }
+    },
+    {
+      "id": "A-1003",
+      "status": "PAID",
+      "customer": { "email": "not-an-email" },
+      "lines": [
+        { "sku": "USB-32GB", "qty": 0, "price": 12.5 },
+        { "sku": "FLASH-DRIVE", "qty": 1, "price": -15.0 }
+      ],
+      "payment": { "captured": true },
+      "refund": {},
+      "shipping": { "fee": 2.0 }
+    },
+    {
+      "id": "A-1004",
+      "status": "CANCELLED",
+      "customer": { "email": "bob@example.org" },
+      "lines": [
+        { "sku": "NOTE-POCKET", "qty": 2, "price": 8.0 }
+      ],
+      "payment": { "captured": false },
+      "refund": { "amount": 16.0 },
+      "shipping": { "fee": 0.0 }
+    },
+    {
+      "id": "A-1005",
+      "status": "PAID",
+      "customer": { "email": "carol@company.com" },
+      "lines": [
+        { "sku": "PEN-RED", "qty": 3, "price": 10.0 },
+        { "sku": "USB-32GB", "qty": 2, "price": 12.5 }
+      ],
+      "payment": { "captured": true },
+      "refund": {},
+      "shipping": { "fee": 4.0 }
+    }
+  ]
+}
